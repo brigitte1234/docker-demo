@@ -6,7 +6,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') {
-     def myTestContainer = docker.image('node:4.6')
+     def myTestContainer = docker.image('brigittequ/nano4.6.0-nano')
      myTestContainer.pull()
      myTestContainer.inside {
        bat('npm install --only=dev')
